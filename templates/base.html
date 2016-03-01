@@ -1,0 +1,43 @@
+<html>
+	
+	<head>
+		<title>{% block page_title%} Django Simple CMS Tutorial {% endblock %}</title>
+		<link rel="stylesheet" href="{{STATIC_URL}}css/style.css">
+		
+		{% block extra_head %}{% endblock %}
+	</head>
+	<body>
+		<div id='container'>
+			
+			<div class='section' id='header'>
+				<h1>Django Simple CMS Tutorial</h1>
+				<p>A tutorial implementing a simple content management system with Django.</p>
+			</div>
+			
+			<div class='section' id='navigation'>
+				<ul>
+					<li>
+						<a href='{% url 'post_list' %}'>Home</a>
+					</li>
+					<li>
+						<a href='{% url 'django.contrib.flatpages.views.flatpage' url="about-us/" %}'>About</a>
+					</li>
+					<li>
+						<a href='#'>Contact</a>
+					</li>
+					
+				</ul>
+			</div>
+			
+			<div class='section' id='content'>
+				{% block content %}{% endblock %}
+			</div>
+			
+			<div class='section' id='footer'>
+				
+			</div>
+			
+		</div>
+	</body>
+	
+</html>

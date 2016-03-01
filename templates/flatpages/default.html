@@ -1,0 +1,10 @@
+{% extends "base.html"  %}
+
+{% load markdown_deux_tags %}
+
+{% block content %}
+	<div class='post flatpage'>
+		<h2>{{ flatpage.title }}</h2>
+		{{ flatpage.content|markdown:"safe" }}
+	</div>
+{% endblock %}
